@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./css/Hermanos-Jota-estilos.css">
+        <title>Muebleria Hermanos Jota</title>
+    </head>
+
+    <body>
+        <header class="header">
+        <a href="index.html" class="logo-container">
+            <img src="./assets/Fotos_hermanos_jota/logo.svg" alt="Logo de Mueblería Jota">
+            <h1>Mueblería Hermanos Jota</h1>
+        </a>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="productos.html">Catálogo</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                    <li><a href="carrito.html" class="cart-icon">🛒 <span id="cart-counter">0</span></a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Hero Banner-->
+        <main>
+            <section class="hero-banner">
+                <div class="hero-content">
+                    <h1>Muebles con historia, diseño con futuro.</h1>
+                    <p>Descubra nuestra colección artesanal de madera.</p>
+                    <a href="productos.html" class="btn">Ver Catálogo</a>
+                </div>
+            </section>
+
+            <section class="featured-products" id="generar-destacado">
+                 <h2 class="featured-title">Productos Destacados</h2>
+                <div class="products-container" id="featured-products-container">
+                    </div>
+            </section>
+        </main>
+
+
+
+        
+
+        <footer class="footer">
+            <p>&copy; 2024 Mueblería Hermanos Jota. Todos los derechos reservados.</p>
+            <div class="social-media">
+            </div>
+        </footer>
+        
+
+        <script src="js/main.js"></script>
+        <script src="js/destacado.js" type="module"> </script>
+        <script src="js/productos.js" type="module"></script>
+        <script src="js/producto-detalle.js" type="module"></script> <!-- Para el contador del carrito -->
+
+    </body>
+    
+</html>

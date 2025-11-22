@@ -1,0 +1,621 @@
+:root {
+    --color-principal: #6a4a3c;
+    --color-secundario: #f5f5f5;
+    --color-texto: #333;
+    --color-btn: #8b5e47;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: var(--color-texto);
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+a:hover {
+    border-radius: 5px;
+    background-color: #8b5e47;
+    color: #ffff;
+}
+
+a:active {
+    border-radius: 10px;
+    background-color: #8b5e47;
+    color: #fff;
+}
+
+a {
+    color: #8b5e47;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+h1 {
+    font-size: 1.5rem;
+}
+
+.hidden {
+    display: none;
+}
+
+/* ------------------- Header y navegación ------------------- */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #e8e8e8;
+    border-bottom: 1px solid #eee;
+    height: 15vh;
+}
+
+.header .logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: var(--color-texto);
+}
+
+.header .logo-container img {
+    height: 60px;
+    width: auto;
+}
+
+.header .logo-container h1 {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.nav-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.cart-icon {
+    position: relative;
+}
+
+/* ------------------- Hero Banner ------------------- */
+.hero-banner {
+    text-align: center;
+    padding: 6rem 2rem;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../assets/Fotos_hermanos_jota/hero_banner.png');
+    background-size: cover;
+    background-position: center;
+    min-height: 70vh;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+/* ------------------- Botones y Formularios ------------------- */
+.btn {
+    background-color: var(--color-btn);
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: var(--color-principal);
+}
+
+/* ------------------- Sección de productos destacados (Catálogo) ------------------- */
+.featured-products {
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+.featured-title {
+    margin-bottom: 2rem;
+}
+
+.products-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.product-card {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+    background-color: #fff;
+    padding: 0;
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    max-height: auto;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.product-card img {
+    width: 50%;
+    height: auto;
+    display: block;
+}
+
+.product-card .imagen-aleatoria-hero {
+    width: 100px;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+/* ------------------- Footer ------------------- */
+.footer {
+    background-color: var(--color-principal);
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+    height: 10vh;
+}
+
+/* ------------------- Filtro / Búsqueda ------------------- */
+.catalogo-header {
+    text-align: center;
+    margin: 2rem 0;
+}
+.catalogo-header input {
+    padding: 10px 15px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 90%;
+    max-width: 400px; 
+}
+
+/* ================================================= */
+/* VISTA DEL PRODUCTO ESPECÍFICO (ProductoDetalle.jsx) */
+/* ¡SOLUCIÓN FINAL: UNA SOLA DEFINICIÓN, CENTRADO FLEXBOX! */
+/* ================================================= */
+
+/* Contenedor principal de imagen e info (La tarjeta grande) */
+.producto-detalle {
+    display: flex; /* Diseño de dos columnas */
+    gap: 40px;
+    margin: 0 auto; /* Centra todo el bloque */
+    align-items: flex-start;
+    padding: 30px 20px;
+    /* Estilos estéticos opcionales que estaban en las versiones duplicadas */
+    background-color: #f5f5f5; /* Color sutil de fondo */
+    border-radius: 12px;
+    max-width: 1200px; 
+    min-width: 700px;
+}
+
+/* Columna que contiene la imagen */
+.image-column {
+    flex: 0 0 50%; /* Ocupa la mitad del espacio y no se comprime */
+    min-width: 400px; 
+    
+    /* 🚨 LA CLAVE DEL CENTRADO DE LA IMAGEN 🚨 */
+    display: flex; 
+    justify-content: center; /* Centra la imagen horizontalmente */
+}
+
+/* La imagen en sí */
+.producto-detalle-imagen {
+    width: 100%;
+    height: 450px; 
+    object-fit: cover; 
+    display: block;
+    border-radius: 12px; 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); 
+}
+
+/* Columna de la información (texto) */
+.info-column {
+    flex: 1 1 50%; /* Ocupa el resto del espacio */
+    padding: 20px 0;
+}
+
+/* Estilo para el botón de catálogo "Volver" */
+.catalogo-header a.btn {
+    text-decoration: none;
+    font-size: 0.9em;
+    padding: 8px 15px;
+}
+
+
+/* ================================================= */
+/* ESTILOS DEL CARRITO (Carrito.jsx)                 */
+/* ================================================= */
+
+/* Mensaje de confirmación (TOAST) */
+.cart-confirmation-message {
+    position: fixed;
+    top: 50px; 
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+    font-size: 1.1em;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* Contenedor principal del carrito */
+.cart-wrapper {
+    display: flex;
+    gap: 30px;
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Estilo para cada ítem individual en la lista del carrito */
+.cart-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+/* Estilo para la imagen dentro del ítem */
+.cart-item-image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-right: 15px;
+}
+
+/* Contenedor de la información del ítem (nombre y cantidad) */
+.cart-item-info {
+    flex-grow: 1;
+    padding-right: 20px;
+}
+
+/* Contenedor del precio unitario y subtotal del ítem */
+.cart-item-price {
+    text-align: right;
+    width: 150px;
+}
+
+/* Columna de resumen del pedido (a la derecha) */
+.cart-summary {
+    flex: 1;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    height: fit-content;
+}
+
+/* Fila para mostrar el subtotal y el total a pagar */
+.cart-total-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-top: 1px solid #ddd;
+}
+
+/* Estilo para el botón de catálogo cuando el carrito está vacío */
+.cart-empty-state {
+    padding: 40px;
+    text-align: center;
+}
+
+
+/* ------------------- Media Queries (Responsivo) ------------------- */
+/* Telefono */
+.products-container {
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Tablets */
+@media (min-width: 768px) {
+    .products-container {
+        flex-direction: row;
+        justify-content: center;
+    }
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+}
+
+/* Compus */
+@media (min-width: 1024px) {
+    .products-container {
+        justify-content: space-between;
+    }
+}
+
+/* ================================================= */
+/* ESTILOS DEL CARRITO (Botones y Mensajes)          */
+/* ================================================= */
+
+/* Contenedor principal del carrito */
+/* (Deja el resto de las clases .cart-wrapper, .cart-item, etc. que ya corregimos) */
+
+/* Botones + y - para la cantidad */
+.btn-qty-control {
+    background-color: #eee;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    margin-right: 5px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: bold;
+    min-width: 30px; /* Ancho fijo para que luzcan mejor */
+}
+
+/* Botón de Eliminar item individual */
+.btn-remove-item {
+    background-color: #ffdddd;
+    color: #cc0000;
+    border: 1px solid #cc0000;
+    padding: 5px 10px;
+    margin-left: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+.btn-remove-item:hover {
+    background-color: #cc0000;
+    color: white;
+}
+
+/* Botón de Vaciar Carrito Completo */
+.btn-clear-cart {
+    background-color: #f44336; /* Rojo de peligro */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin-top: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: fit-content;
+    display: block; /* Para que se separe de los items */
+}
+.btn-clear-cart:hover {
+    background-color: #d32f2f;
+}
+
+/* ================================================= */
+/* ESTILOS DE LISTA DE PRODUCTOS (ListaProductos.jsx) */
+/* ================================================= */
+
+/* Estilos para el Link que envuelve la tarjeta */
+.product-link {
+    text-decoration: none; /* Quita el subrayado predeterminado */
+    color: inherit; /* Hereda el color del texto del body */
+}
+/* La tarjeta .product-card ya existe y tiene estilos de hover/sombra */
+
+/* Imagen dentro de la tarjeta */
+.product-card-image {
+    width: 100%;
+    height: 200px; 
+    object-fit: cover; /* Asegura que la imagen cubra sin distorsionarse */
+}
+
+/* Contenedor de texto y precio de la tarjeta */
+.product-card-info {
+    padding: 15px;
+}
+
+/* Estilo del precio */
+.product-price {
+    color: var(--color-btn); /* #8b5e47 */
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+/* ================================================= */
+/* ESTILOS DE DETALLE DE PRODUCTO (ProductoDetalle.jsx) */
+/* ================================================= */
+
+/* Contenedor del encabezado del catálogo (usado para el botón Volver) */
+.catalogo-header-flex {
+    margin-bottom: 20px;
+}
+
+/* Botón Añadir al Carrito en detalle */
+.btn-add-to-cart-detail {
+    margin-top: 30px; 
+    padding: 12px 25px; 
+    font-size: 1.1em;
+}
+
+/* Estilo del precio en detalle */
+.product-detail-price {
+    font-size: 2em; 
+    font-weight: bold;
+    color: var(--color-btn); /* #8b5e47 */
+    margin: 15px 0;
+}
+
+/* Estilo de la descripción */
+.product-detail-description {
+    line-height: 1.6;
+    color: #555;
+}
+
+/* ================================================= */
+/* ESTILOS DE CONTACTO (Contacto.jsx)                */
+/* ================================================= */
+
+.contact-main-padded {
+    padding: 2rem;
+}
+
+.contact-intro-text {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+/* Contenedor del formulario */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 0 auto;
+    max-width: 600px;
+}
+
+/* Estilo para inputs y textarea */
+.form-input-field {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box; /* Incluye padding y borde en el ancho total */
+}
+
+/* Mensaje de éxito */
+.success-message-box {
+    text-align: center;
+    color: green;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid green;
+    border-radius: 5px;
+}
+
+/* Margen para el botón de enviar consulta */
+.btn-submit-margin {
+    margin-top: 10px;
+}
+
+/* ================================================= */
+/* ESTILOS DEL CARRITO (Carrito.jsx)                 */
+/* ================================================= */
+
+.cart-main-padded {
+    padding: 40px;
+}
+
+/* Estilos de las columnas (Items y Resumen) */
+.cart-columns {
+    display: flex;
+    gap: 30px;
+}
+
+/* Columna de ítems */
+.cart-items-column {
+    flex: 3;
+}
+
+/* Wrapper de los botones + y - */
+.qty-controls-wrapper {
+    margin-top: 10px;
+}
+
+/* Precio total del ítem individual */
+.cart-item-price-total {
+    font-weight: bold;
+}
+
+/* Precio por unidad */
+.cart-item-price-unit {
+    color: #888;
+}
+
+/* Línea de total sin borde superior (para separar el resumen del total final) */
+.cart-total-row-no-border {
+    border-top: none;
+}
+
+/* Estilo del total final */
+.cart-final-total-color {
+    color: #0066cc;
+}
+
+/* Botón de Finalizar Compra */
+.btn-checkout {
+    width: 100%;
+    padding: 15px;
+}
+
+/* Estilo para centrar el mensaje de compra exitosa */
+.cart-confirmation-message-static {
+    position: static;
+    transform: none;
+    margin: 0 auto;
+}
+
+/* Margen en elementos del carrito vacío */
+.cart-empty-state-margin-top {
+    margin-top: 20px;
+}
+
+.search-bar-container {
+    width: 100%;
+    max-width: 600px; /* Limita el ancho del buscador */
+    margin: 20px auto 40px auto; /* Centrar y dar espacio */
+    padding: 10px;
+    background-color: var(--color-secundario); /* Fondo suave */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Estilo del input de texto */
+.search-input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1em;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+}
+
+.search-input:focus {
+    border-color: var(--color-btn);
+    outline: none; /* Quitar el borde de foco predeterminado del navegador */
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./css/Hermanos-Jota-estilos.css">
+        <title>Catalogo</title>
+    </head>
+
+    <body>
+        <header class="header">
+        <a href="index.html" class="logo-container">
+            <img src="./assets/Fotos_hermanos_jota/logo.svg" alt="Logo de Mueblería Jota">
+            <h1>Mueblería Hermanos Jota</h1>
+        </a>
+            <nav class="nav-menu"> <!-- Barra Navegacion -->
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="productos.html">Catálogo</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                    <li><a href="carrito.html" class="cart-icon">🛒 <span id="cart-counter">0</span></a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <div class="catalogo-header">
+                <h1>Catálogo de Productos</h1>
+                <input type="text" id="buscar" placeholder="Buscar productos...">
+            </div>
+
+            <div class="products-container" id="catalogo-container">
+                </div>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2024 Mueblería Hermanos Jota. Todos los derechos reservados.</p>
+            <div class="social-media">
+            </div>
+        </footer>
+
+
+        
+        <script src="js/productos.js" type="module"></script>
+        <script src="js/producto-detalle.js" type="module"></script> <!-- Para el contador del carrito -->
+
+    </body>
+</html>

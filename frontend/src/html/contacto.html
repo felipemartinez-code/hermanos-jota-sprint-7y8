@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./css/Hermanos-Jota-estilos.css">
+        <title>Contacto</title>
+    </head>
+
+    <body>
+        <header class="header">
+        <a href="index.html" class="logo-container">
+            <img src="./assets/Fotos_hermanos_jota/logo.svg" alt="Logo de Mueblería Jota">
+            <h1>Mueblería Hermanos Jota</h1>
+        </a>
+            <nav class="nav-menu"> <!-- Barra Navegacion -->
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="productos.html">Catálogo</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                    <li><a href="carrito.html" class="cart-icon">🛒 <span id="cart-counter">0</span></a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <h1>Contacto</h1>
+            <form id="form-contacto">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" required>
+
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" required></textarea>
+
+                <button type="submit">Enviar</button>
+            </form>
+            <!-- Mensaje de éxito que se mostrará con JS -->
+            <div id="mensaje-exito" class="hidden">¡Gracias por tu mensaje! Te responderemos pronto.</div>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2024 Mueblería Hermanos Jota. Todos los derechos reservados.</p>
+            <div class="social-media">
+            </div>
+        </footer>
+
+
+        
+        <script src="js/contacto.js"></script>
+        <script src="js/producto-detalle.js" type="module"></script> <!-- Para el contador del carrito -->
+    </body>
+</html>
